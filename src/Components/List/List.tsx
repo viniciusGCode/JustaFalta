@@ -6,16 +6,21 @@ import ModalComponent from '../Modal/Modal';
 
 function List() {
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState<boolean>(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShow(prevState => !prevState)
 
   return (
     <div className="list">
-      <ModalComponent show={show}/>
-
-      <button onClick={handleShow}> Open modal </button>
+      <ModalComponent 
+        open={show}
+        name="Abilio Brunini"
+        entourage="PL"
+        attendance={14}
+        justifiedAbsences={0}
+        unJustifiedAbsences={0}
+        handleShow={handleShow}
+      />
 
     <Table striped bordered hover size='sm'>
       <thead>
@@ -26,7 +31,7 @@ function List() {
       </thead>
       <tbody>
         <tr>
-          <td><a href='#' className='name'>Abilio Brunini</a></td>
+          <td><a href='#' onClick={handleShow} className='name'>Abilio Brunini</a></td>
           <td>PL</td>
         </tr>
       </tbody>
