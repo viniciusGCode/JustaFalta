@@ -10,11 +10,12 @@ interface ModalProps {
     attendance: number
     justifiedAbsences: number
     unJustifiedAbsences: number
+    state: string
     handleShow: () => void
 }
 
 
-function ModalComponent({open, name, entourage, attendance, justifiedAbsences, unJustifiedAbsences, handleShow}:ModalProps) {
+function ModalComponent({open, name, entourage, attendance, justifiedAbsences, unJustifiedAbsences, handleShow, state}:ModalProps) {
 
 
   return (
@@ -33,6 +34,7 @@ function ModalComponent({open, name, entourage, attendance, justifiedAbsences, u
                                 <tr>
                                 <th>Nome</th>
                                 <th>Partido</th>
+                                <th>Estado</th>
                                 <th>Presenças</th>
                                 <th>Faltas justificadas</th>
                                 <th>Faltas não justificadas</th>
@@ -42,6 +44,7 @@ function ModalComponent({open, name, entourage, attendance, justifiedAbsences, u
                                 <tr>
                                 <td>{name}</td>
                                 <td>{entourage}</td>
+                                <td>{state}</td>
                                 <td>{attendance}</td>
                                 <td>{justifiedAbsences}</td>
                                 <td>{unJustifiedAbsences}</td>
