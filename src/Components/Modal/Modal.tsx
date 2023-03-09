@@ -27,7 +27,7 @@ function ModalComponent({open, name, entourage, attendance, justifiedAbsences, u
                     <Dialog.Overlay className='DialogOverlay' />
                     <Dialog.Content className='DialogContent'>
                         <Dialog.Title className='DialogTitle'>
-                            Informações do candidato
+                            Informações do deputado
                         </Dialog.Title>
                         <Table striped bordered hover size='sm'>
                             <thead>
